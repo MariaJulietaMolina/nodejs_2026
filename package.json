@@ -1,0 +1,14 @@
+{
+  "name": "servidor-node",
+  "version": "1.0.0",
+  "description": "Servidor node.js para TalentoTech 2026",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Molina Maria Julieta",
+  "license": "ISC",
+  "type": "module"
+}
