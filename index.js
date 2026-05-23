@@ -5,7 +5,8 @@ const [method, target, ...args] = process.argv.slice(2);
 //funcion principal
 
 async function run() {
-}
+
+
 if (!method || !target ) {
     console.error('Faltan Argumentos');
     return;
@@ -29,6 +30,22 @@ else if (method === 'DELETE' && target.startsWith('products/')) {
 }
 else {
     console.log('Comando incorrecto.')
+}
+}
+
+//metodo para ver todos los productos
+
+async function getAllProducts(){
+    try {
+        console.log('Cargando productos...');
+        const response = await fetch(`${BASE_URL}/products`);
+        const data = await response.json();
+        console.clear();
+        console.log('TODOS LOS PRODUCTOS');
+        console.table(data.map(({ id, title, price, category }) => ({ id, title, price, category })));
+      } catch (error) {
+        console.error('NO se pudo obtener productos', error.message);
+      }
 }
 
 
